@@ -1,0 +1,223 @@
+/***********************************
+ *                                 *
+ *             WEBFONTS            *
+ *                                 *
+ ***********************************/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+/***********************************
+ *                                 *
+ *            CONTAINERS           *
+ *                                 *
+ ***********************************/
+body {
+  font-family: 'Open Sans', 'Trebuchet MS', 'Verdana', 'Helvetica', 'Arial', sans-serif;
+  background: #d8f0f3;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background-image: url(/assets/images/bgroundGradient.PNG);
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+#bodyContainer {
+  width: 70%;
+  min-width: 900px;
+  background: transparent;
+  margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+#bodybox {
+  -webkit-border-bottom-right-radius: 30px;
+  -moz-border-radius-bottomright: 30px;
+  border-radius: 0px 0px 30px 0px;
+  box-shadow: -2px 2px 6px #888;
+  -moz-box-shadow: -2px 2px 6px #888;
+  -webkit-box-shadow: -2px 2px 6px #888;
+}
+
+#content {
+  background: #fcfcfc;
+  padding: 50px;
+}
+
+#footer {
+  text-align: center;
+  padding: 0;
+  background: #DDDDDD;
+  position: relative;
+  clear: both;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -khtml-border-radius: 0px 0px 10px 0px;
+  border-radius: 0px 0px 10px 0px;
+  overflow: hidden;
+}
+
+#footer p {
+  margin: .3em;
+}
+
+/***********************************
+ *                                 *
+ *             HEADER              *
+ *                                 *
+ ***********************************/
+#header {
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-border-top-left-radius: 30px;
+  -moz-border-radius-topleft: 30px;
+  border-top-left-radius: 30px;
+	box-shadow: -2px 0px 6px #888;
+	-moz-box-shadow: -2px 0px 6px #888;
+	-webkit-box-shadow: -2px 0px 6px #888;
+  padding-bottom: 10px;
+}
+
+#headerlogo{
+  min-height: 300px;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+
+#headertext {
+  cursor: hand;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -30%;
+  padding: 20px 50px 20px 50px;
+  float: left;
+  background-color: #2C93BA;
+  text-align: center;
+}
+
+#headertext h1 {
+  margin: 0;
+  font-size: 500%;
+  letter-spacing: .1em;
+  font-variant: small-caps;
+  color: #FA0;
+}
+
+#headertext h2 {
+  margin: 0;
+  font-size: 210%;
+  color: white;
+}
+
+/***********************************
+ *                                 *
+ *          NAVIGATION             *
+ *                                 *
+ ***********************************/
+#nav {
+  width: 100%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  border-top: 0px;
+  box-shadow: -1px 2px 3px #bbb;
+  -moz-box-shadow: -1px 2px 3px #bbb;
+  -webkit-box-shadow: -1px 2px 3px #bbb;
+}
+
+#nav li {
+  float: left;
+}
+
+#nav li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #069;
+  border-right: 1px solid #ccc;
+}
+
+#nav li a:hover {
+  color: #c00;
+  background-color: #fff;
+}
+
+#nav li a.current {
+  color: #fff;
+  background-color: #E60;
+}
+
+/***********************************
+ *                                 *
+ *        TEXT AND HEADINGS        *
+ *                                 *
+ ***********************************/
+p {
+  line-height: 180%;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+h1 {
+  color: #E60;
+}
+
+h2 {
+  color: #2C93BA;
+}
+
+h3 {
+  color: #3A9AC0;
+  font-size: 110%;
+}
+
+/***********************************
+ *                                 *
+ *              LINKS              *
+ *                                 *
+ ***********************************/
+a img {
+  border: none;
+}
+
+a:link {
+  color: #69C;
+}
+
+a:visited {
+  color: #C3F;
+}
+
+a:hover, a:active, a:focus {
+  color: #C00;
+}
+
+/***********************************
+ *                                 *
+ *          PAGE ELEMENTS          *
+ *                                 *
+ ***********************************/
+hr {
+  height: 1px;
+  border-top: 1px;
+  border-right: none;
+  border-left: none;
+  border-color: #aaa;
+  width: 40%;
+}
+
+table td {
+  vertical-align: top;
+}
