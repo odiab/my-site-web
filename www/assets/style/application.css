@@ -16,104 +16,77 @@ body {
   margin: 0;
   padding: 0;
   color: #000;
-  background-image: url(/assets/images/bgroundGradient.PNG);
-  background-repeat: no-repeat;
-  background-position: left top;
+  background-color: #EBEBEB;
 }
 
-#bodyContainer {
-  width: 70%;
-  min-width: 900px;
-  background: transparent;
-  margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
-  -webkit-border-bottom-right-radius: 10px;
-  -moz-border-radius-bottomright: 10px;
-  border-bottom-right-radius: 10px;
-  margin-top: 40px;
-  padding-bottom: 40px;
+html, body {
+  height: 100%;
 }
 
-#bodybox {
-  -webkit-border-bottom-right-radius: 30px;
-  -moz-border-radius-bottomright: 30px;
-  border-radius: 0px 0px 30px 0px;
-  box-shadow: -2px 2px 6px #888;
-  -moz-box-shadow: -2px 2px 6px #888;
-  -webkit-box-shadow: -2px 2px 6px #888;
+#topContainer {
+  min-height: 100%;
+  height: auto !important; /* Makes bottom stick in IE 6*/
+  height: 100%;
+  margin: 0 auto -275px;
+  vertical-align: bottom;
 }
 
 #content {
-  background: #fcfcfc;
-  padding: 50px;
-}
-
-#footer {
-  text-align: center;
-  padding: 0;
-  background: #DDDDDD;
-  position: relative;
-  clear: both;
-  -webkit-border-bottom-right-radius: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -khtml-border-radius: 0px 0px 10px 0px;
-  border-radius: 0px 0px 10px 0px;
-  overflow: hidden;
-}
-
-#footer p {
-  margin: .3em;
-}
-
-/***********************************
- *                                 *
- *             HEADER              *
- *                                 *
- ***********************************/
-#header {
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-border-top-left-radius: 30px;
-  -moz-border-radius-topleft: 30px;
-  border-top-left-radius: 30px;
-	box-shadow: -2px 0px 6px #888;
-	-moz-box-shadow: -2px 0px 6px #888;
-	-webkit-box-shadow: -2px 0px 6px #888;
-  padding-bottom: 10px;
-}
-
-#headerlogo{
-  min-height: 300px;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  display: inline-block;
-  position: relative;
+  padding: 50px;
+  margin-left: 200px;
 }
 
+#bottomContainer, #bottomPush {
+  height: 275px;
+}
 
-#headertext {
+#bottomPush {
+  clear: both;
+}
+
+#titlebar {
+  width: 100%;
+  height: 150px;
+  padding: 25px;
+  padding-left: 50px;
+  margin-bottom: 75px;
+  background: #FF6700;
+  color: #fff;
+}
+
+#titlebarHeader {
   cursor: hand;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  margin-top: -30%;
-  padding: 20px 50px 20px 50px;
   float: left;
-  background-color: #2C93BA;
-  text-align: center;
 }
 
-#headertext h1 {
-  margin: 0;
-  font-size: 500%;
-  letter-spacing: .1em;
-  font-variant: small-caps;
-  color: #FA0;
+#titlebarLogo {
+  vertical-align: baseline;
 }
 
-#headertext h2 {
+#titlebarName, #sidebarName {
   margin: 0;
-  font-size: 210%;
-  color: white;
+  font-size: 140px;
+}
+
+#sidebar {
+  position: absolute;
+  bottom: 300px;
+  float: left;
+  width: 200px;
+}
+
+#sidebarName {
+  display: block;
+  color: #FF6700;
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
 }
 
 /***********************************
@@ -171,7 +144,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  color: #E60;
+  color: #FF6700;
 }
 
 h2 {
