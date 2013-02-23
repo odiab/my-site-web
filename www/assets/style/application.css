@@ -7,10 +7,10 @@
 
 @font-face {
   font-family: 'Code-Pro-LC';
-  src: url('/webfonts/25CFB7_6_0.eot');
-  src: url('/webfonts/25CFB7_6_0.eot?#iefix') format('embedded-opentype'),
-    url('/webfonts/25CFB7_6_0.woff') format('woff'),
-    url('/webfonts/25CFB7_6_0.ttf') format('truetype');
+  src: url('/assets/webfonts/25CFB7_6_0.eot');
+  src: url('/assets/webfonts/25CFB7_6_0.eot?#iefix') format('embedded-opentype'),
+    url('/assets/webfonts/25CFB7_6_0.woff') format('woff'),
+    url('/assets/webfonts/25CFB7_6_0.ttf') format('truetype');
 }
 
 /***********************************
