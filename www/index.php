@@ -24,6 +24,7 @@
 
     <div id="bottomContainer">
       <?php Assets::load(TEMPLATE, 'titlebar', array('path' => $path)); ?>
+      <?php Assets::load(TEMPLATE, 'footer'); ?>
     </div>
 
   </body>
