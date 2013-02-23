@@ -1,11 +1,8 @@
 <?php
   $links = array(
-    'home' => 'Home',
-    'staff' => 'Meet Our Staff',
-    'participants' => 'For Participants',
-    'sponsors' => 'For Sponsors',
-    'locations' => 'Locations',
-    'contact' => 'Contact Us',
+    'edu' => 'edu',
+    'work' => 'work',
+    'projects' => 'projects',
   );
 
   $highlight = true;
@@ -30,15 +27,22 @@
 
 <ul id="nav">
   <?php
+  $i = 0;
+  $num = count($links);
   // generate links to pages
-  if ($highlight) {
-    foreach ($links as $key => $value) {
-      $class = '';
+  foreach ($links as $key => $value) {
+    $class = '';
+    if ($highlight) {
       if ($current == $key) {
         $class .= 'current';
       }
-      echo "<li><a class='$class' href='/$key'>$value</a></li>";
     }
+    if ($i == $num - 1) {
+      $class .= ' last';
+    }
+
+    echo "<li><a class='$class' href='/$key'>$value</a></li>";
+    ++$i;
   }
   ?>
 </ul>
