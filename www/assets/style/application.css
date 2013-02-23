@@ -5,7 +5,14 @@
  ***********************************/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-@font-face {font-family: 'Code-Pro-LC';src: url('webfonts/25CFB7_6_0.eot');src: url('webfonts/25CFB7_6_0.eot?#iefix') format('embedded-opentype'),url('webfonts/25CFB7_6_0.woff') format('woff'),url('webfonts/25CFB7_6_0.ttf') format('truetype');}
+@font-face {
+  font-family: 'Code-Pro-LC';
+  src: url('/webfonts/25CFB7_6_0.eot');
+  src: url('/webfonts/25CFB7_6_0.eot?#iefix') format('embedded-opentype'),
+    url('/webfonts/25CFB7_6_0.woff') format('woff'),
+    url('/webfonts/25CFB7_6_0.ttf') format('truetype');
+}
+
 /***********************************
  *                                 *
  *            CONTAINERS           *
