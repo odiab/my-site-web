@@ -26,11 +26,18 @@ html, body {
 }
 
 #topContainer {
+  position: relative;
   min-height: 100%;
   height: auto !important; /* Makes bottom stick in IE 6*/
   height: 100%;
   margin: 0 auto -275px;
   vertical-align: bottom;
+  z-index: 0;
+}
+
+#bottomContainer {
+  position: relative;
+  z-index: 1;
 }
 
 #content {
@@ -38,7 +45,6 @@ html, body {
   bottom: 0;
   padding: 50px;
   margin-left: 200px;
-  z-index: -1;
 }
 
 #bottomContainer, #bottomPush {
@@ -46,6 +52,7 @@ html, body {
 }
 
 #bottomPush {
+  position: relative;
   clear: both;
 }
 
