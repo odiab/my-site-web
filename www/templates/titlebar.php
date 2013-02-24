@@ -4,7 +4,7 @@
     <span id="titlebarName">MAR</span>
   </div>
 
-  <div id=navigation>
+  <div id='navigation'>
     <?php Assets::load(TEMPLATE, 'navigation',
         array('path' => $args['path'])); ?>
   </div>
