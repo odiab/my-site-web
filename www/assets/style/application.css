@@ -33,7 +33,7 @@ body {
   padding: 0;
   color: #000;
   background-color: #EDEDED;
-  min-width: 77.5pc;
+  min-width: 73.1pc;
 }
 
 html, body {
@@ -73,8 +73,8 @@ html, body {
 
 #titlebar {
   font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
-  height: 10.5pc;
-  padding: 2pc 5pc 0 5pc;
+  height: 9.5pc;
+  padding: 1.2pc 1pc 0 5pc;
   background: #FF6D00;
   color: #fff;
 }
