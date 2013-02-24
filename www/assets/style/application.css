@@ -7,10 +7,19 @@
 
 @font-face {
   font-family: 'Code-Pro-LC';
-  src: url('/assets/webfonts/25CFB7_6_0.eot');
-  src: url('/assets/webfonts/25CFB7_6_0.eot?#iefix') format('embedded-opentype'),
-    url('/assets/webfonts/25CFB7_6_0.woff') format('woff'),
-    url('/assets/webfonts/25CFB7_6_0.ttf') format('truetype');
+  src: url('/assets/webfonts/Code-Pro/25CFB7_6_0.eot');
+  src: url('/assets/webfonts/Code-Pro/25CFB7_6_0.eot?#iefix') format('embedded-opentype'),
+    url('/assets/webfonts/Code-Pro/25CFB7_6_0.woff') format('woff'),
+    url('/assets/webfonts/Code-Pro/25CFB7_6_0.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Code-Pro';
+  src: url('/assets/webfonts/Code-Pro/25CFB7_9_0.eot');
+  src: url('/assets/webfonts/Code-Pro/25CFB7_9_0.eot?#iefix') format('embedded-opentype'),
+    url('/assets/webfonts/Code-Pro/25CFB7_9_0.woff') format('woff'),
+    url('/assets/webfonts/Code-Pro/25CFB7_9_0.ttf') format('truetype');
 }
 
 /***********************************
@@ -20,12 +29,11 @@
  ***********************************/
 body {
   font-family: 'Open Sans', 'Trebuchet MS', 'Verdana', 'Helvetica', 'Arial', sans-serif;
-  background: #d8f0f3;
   margin: 0;
   padding: 0;
   color: #000;
-  background-color: #EBEBEB;
-  min-width: 1200px;
+  background-color: #EDEDED;
+  min-width: 74.5pc;
 }
 
 html, body {
@@ -37,7 +45,7 @@ html, body {
   min-height: 100%;
   height: auto !important; /* Makes bottom stick in IE 6*/
   height: 100%;
-  margin: 0 auto -275px;
+  margin: 0 auto -17pc;
   vertical-align: bottom;
   z-index: 0;
 }
@@ -50,12 +58,12 @@ html, body {
 #content {
   position: absolute;
   bottom: 0;
-  padding: 50px;
-  margin-left: 200px;
+  padding: 4pc;
+  margin-left: 13pc;
 }
 
 #bottomContainer, #bottomPush {
-  height: 275px;
+  height: 17pc;
 }
 
 #bottomPush {
@@ -65,40 +73,44 @@ html, body {
 
 #titlebar {
   font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
-  width: 100%;
-  height: 175px;
-  padding-bottom: 20px;
-  padding-left: 55px;
-  margin-bottom: 50px;
+  height: 10.5pc;
+  padding: 2pc 5pc 0 2pc;
   background: #FF6D00;
   color: #fff;
 }
 
 #titlebarHeader {
+  font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
   cursor: hand;
   cursor: pointer;
   float: left;
 }
 
 #titlebarLogo {
-  vertical-align: text-bottom;
+  vertical-align: baseline;
+  height: 8.15pc;
 }
 
 #titlebarName, #sidebarName {
+  font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
   margin: 0;
-  font-size: 200px;
+  font-size: 11.6pc;
+  line-height: 8.5pc;
+}
+
+#titlebarName {
 }
 
 #sidebar {
   position: absolute;
-  bottom: 260px;
+  bottom: 19pc;
+  line-height: 8.5pc;
   float: left;
-  width: 200px;
-  margin-left: 50px;
+  width: 12pc;
+  margin-left: 4pc;
 }
 
 #sidebarName {
-  font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
   display: block;
   color: #FF6D00;
   transform: rotate(-90deg);
@@ -108,12 +120,17 @@ html, body {
   -o-transform: rotate(-90deg);
 }
 
+#footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1.5pc;
+}
+
 #footer p {
   margin: 0;
   text-align: right;
   color: #777;
-  margin-bottom: 10px;
-  margin-right: 10px;
 }
 
 /***********************************
@@ -121,11 +138,11 @@ html, body {
  *          NAVIGATION             *
  *                                 *
  ***********************************/
+
 #nav {
-  font-size: 50px;
+  font-size: 3pc;
   float: left;
-  padding: 50;
-  margin-top: 25px;
+  margin: 0;
   list-style: none;
 }
 
@@ -135,10 +152,10 @@ html, body {
 
 #nav li a {
   display: block;
-  padding: 0 20px;
+  padding: 0 1pc;
   text-decoration: none;
   color: #fff;
-  border-right: 5px solid #fff;
+  border-right: .25pc solid #fff;
 }
 
 #nav li a.last {
@@ -159,24 +176,27 @@ html, body {
  *                                 *
  ***********************************/
 p {
-  line-height: 180%;
+  line-height: 1.8em;
 }
 
 h1, h2, h3 {
   font-weight: normal;
+  line-height: .5em;
 }
 
 h1 {
   color: #FF6D00;
+  font-size: 4em;
 }
 
 h2 {
   color: #2C93BA;
+  font-size: 2em;
 }
 
 h3 {
   color: #3A9AC0;
-  font-size: 110%;
+  font-size: 1.5em;
 }
 
 /***********************************
