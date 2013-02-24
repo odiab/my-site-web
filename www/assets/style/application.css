@@ -58,8 +58,9 @@ html, body {
 #content {
   position: absolute;
   bottom: 0;
-  padding: 4pc;
+  padding: 4pc 10pc;
   margin-left: 13pc;
+  text-align: center;
 }
 
 #bottomContainer, #bottomPush {
