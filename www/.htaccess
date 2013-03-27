@@ -6,7 +6,7 @@ Options +FollowSymLinks +ExecCGI
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{REQUEST_URI} !^/?(assets)/
+  RewriteCond %{REQUEST_URI} !^/?(static)/
   RewriteRule ^(.*)$ index.php [QSA,PT,L]
 </IfModule>
 
