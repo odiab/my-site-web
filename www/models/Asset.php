@@ -90,6 +90,11 @@ class Asset {
   public static function load($path, $args=array())
   {
     $class = get_called_class();
+    if ($class == 'Asset') {
+      trigger_error("Cannot call load on raw Asset class", E_USER_ERROR);
+      return -1;
+    }
+
     if (!is_string($path)) {
       trigger_error("Invalid name, must be a string", E_USER_WARNING);
       return -1;
