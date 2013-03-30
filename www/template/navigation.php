@@ -14,7 +14,7 @@
   }
 
   $current = $args['path'];
-  $current = Assets::formatPath($current, array('.php' => FALSE));
+  $current = Asset::formatPath($current, array('.php' => FALSE));
   $first = strpos($current, '/');
   if ($first !== FALSE) {
     $current = substr($current, 0, $first);
