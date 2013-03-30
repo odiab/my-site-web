@@ -5,7 +5,6 @@
   </div>
 
   <div id='navigation'>
-    <?php Assets::load(TEMPLATE, 'navigation',
-        array('path' => $args['path'])); ?>
+    <?php Template::load('navigation', array('path' => $args['path'])); ?>
   </div>
 </div>

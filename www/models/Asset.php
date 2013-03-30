@@ -1,13 +1,5 @@
 <?php
-define('PAGE', 0);
-define('TEMPLATE', 1);
-define('HELPER', 2);
-define('MODEL', 3);
-define('NUM_ASSETS', 4);
-
-class Assets {
-
-  private static $assets = null;
+class Asset {
 
   //***********
   //* HELPERS *
@@ -92,52 +84,25 @@ class Assets {
     return $path;
   }
 
-  //********
-  //* INIT *
-  //********
-  private static function init()
-  {
-    $root = $_SERVER['DOCUMENT_ROOT'];
-    self::$assets = array(
-      $root . '/pages',
-      $root . '/templates',
-      $root . '/helpers',
-      $root . '/models',
-    );
-  }
-
   //***********
   //* METHODS *
   //***********
-  public static function load($type, $path, $args=array())
+  public static function load($path, $args=array())
   {
-    // validate
-    if (!is_array(self::$assets)) {
-      self::init();
-    }
-
+    $class = get_called_class();
     if (!is_string($path)) {
-      trigger_error("Invalid path '$path', must be a string", E_USER_WARNING);
+      trigger_error("Invalid name, must be a string", E_USER_WARNING);
       return -1;
     }
 
-    if (!is_int($type) || $type < 0 || $type >= NUM_ASSETS) {
-      trigger_error("Invalid asset type of '$type'", E_USER_WARNING);
-      return -1;
-    }
-
-    // act
     $path = self::formatPath ($path);
-    if ($type == PAGE && $path == '') {
-      $path = 'home.php';
-    }
 
-    $val = self::$assets[$type];
-    if (!file_exists ("$val/$path")) {
-      trigger_error("Asset at path of '$val/$path' does not exist", E_USER_WARNING);
+    $dir = $_SERVER['DOCUMENT_ROOT'] . '/' . strToLower($class);
+    if (!file_exists ("$dir/$path")) {
+      trigger_error("Asset at name of '$dir/$path' does not exist", E_USER_WARNING);
       return -1;
     } else {
-      include ("$val/$path");
+      include ("$dir/$path");
     }
 
     return 0;
