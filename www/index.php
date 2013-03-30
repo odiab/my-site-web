@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <?php
     include($_SERVER['DOCUMENT_ROOT'] . '/php-loader/loader-bootstrap.php');
-    Template::load('head');
     $path = $_SERVER['REQUEST_URI'];
+
+    Template::load('head');
   ?>
 
   <body>
