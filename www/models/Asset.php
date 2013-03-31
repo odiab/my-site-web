@@ -96,7 +96,7 @@ class Asset {
     }
 
     if (!is_string($path)) {
-      trigger_error("Invalid name, must be a string", E_USER_WARNING);
+      trigger_error("Invalid path, must be a string", E_USER_WARNING);
       return -1;
     }
 
