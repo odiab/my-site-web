@@ -7,7 +7,7 @@ function assetAutoloader ($class)
     $path .= '/';
   }
 
-  $path .= "models/$class.php";
+  $path .= "assets/$class.php";
   if (!file_exists ($path)) {
     trigger_error (
       "Invoked non-existent asset class ('$class')", E_USER_WARNING
