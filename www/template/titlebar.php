@@ -11,6 +11,7 @@
         $buttons = array(
           'fb' => 'https://www.facebook.com/omar.s.diab',
           'linkedin' => 'https://www.linkedin.com/in/osdiab',
+          'github' => 'https://github.com/odiab',
           'phone' => '#',
           'email' => 'mailto:o.s.diab@gmail.com',
         );
