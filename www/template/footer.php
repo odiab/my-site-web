@@ -1,5 +1,5 @@
 <div id="footer">
   <p>
-    &copy; Omar Diab, 2013
+    <a href="/credits">Credits</a> | &copy; Omar Diab, 2013
   </p>
 </div>
