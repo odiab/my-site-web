@@ -13,6 +13,10 @@
       <a href="http://thenounproject.com/DmitryBaranovskiy" target="_blank">
       Dmitry Baranovskiy</a> from The Noun Project
   </li>
+  <li>
+    <a href="http://thenounproject.com/noun/mail/#icon-No429"
+      target="_blank">Mail</a> from The Noun Project
+  </li>
   </li>Facebook, LinkedIn, and Github logos property of those companies</li>
 </ul>
 
