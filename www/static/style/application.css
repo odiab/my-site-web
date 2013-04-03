@@ -8,7 +8,8 @@
 @font-face {
   font-family: 'Code-Pro-LC';
   src: url('/static/webfonts/Code-Pro/25CFB7_6_0.eot');
-  src: url('/static/webfonts/Code-Pro/25CFB7_6_0.eot?#iefix') format('embedded-opentype'),
+  src: url('/static/webfonts/Code-Pro/25CFB7_6_0.eot?#iefix')
+    format('embedded-opentype'),
     url('/static/webfonts/Code-Pro/25CFB7_6_0.woff') format('woff'),
     url('/static/webfonts/Code-Pro/25CFB7_6_0.ttf') format('truetype');
 }
@@ -17,7 +18,8 @@
 @font-face {
   font-family: 'Code-Pro';
   src: url('/static/webfonts/Code-Pro/25CFB7_9_0.eot');
-  src: url('/static/webfonts/Code-Pro/25CFB7_9_0.eot?#iefix') format('embedded-opentype'),
+  src: url('/static/webfonts/Code-Pro/25CFB7_9_0.eot?#iefix')
+    format('embedded-opentype'),
     url('/static/webfonts/Code-Pro/25CFB7_9_0.woff') format('woff'),
     url('/static/webfonts/Code-Pro/25CFB7_9_0.ttf') format('truetype');
 }
@@ -28,12 +30,17 @@
  *                                 *
  ***********************************/
 body {
-  font-family: 'Open Sans', 'Trebuchet MS', 'Verdana', 'Helvetica', 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Verdana', 'Helvetica', 'Arial',
+    sans-serif;
   color: #000;
   background-color: #EDEDED;
-  min-width: 73.1pc;
+  min-width: 69em;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,
+    th,td {
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
@@ -41,30 +48,37 @@ html, body {
 }
 
 #topContainer {
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: 15em;
   min-height: 100%;
   height: auto !important; /* Makes bottom stick in IE 6*/
   height: 100%;
-  margin: 0 auto -17pc;
+  width: 100%;
+  max-width: 81em;
+  margin: 0 auto -15em;
   vertical-align: bottom;
   z-index: 0;
 }
 
 #bottomContainer {
-  position: relative;
+  position: absolute;
+  width: 100%;
+  min-width: 69em;
+  left: 0;
+  bottom: 0;
   z-index: 1;
 }
 
 #content {
   position: absolute;
   bottom: 0;
-  padding: 4pc 10pc;
-  margin-left: 13pc;
-  text-align: center;
+  padding: 3em;
+  margin-left: 12em;
 }
 
 #bottomContainer, #bottomPush {
-  height: 17pc;
+  height: 15em;
 }
 
 #bottomPush {
@@ -74,41 +88,50 @@ html, body {
 
 #titlebar {
   font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
-  height: 9.5pc;
-  padding: 1.2pc 1pc 0 5pc;
-  background: #FF6D00;
   color: #fff;
+  background: #FF6D00;
+  width: 100%;
+  padding: 1.5em 0 1.5em 3em;
+  height: 7.5em;
 }
 
 #titlebarHeader {
+  position: relative;
   font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
   cursor: hand;
   cursor: pointer;
+  float: left;
+  margin-right: 1.5em;
+}
+
+#navigation {
+  position: relative;
   float: left;
 }
 
 #titlebarLogo {
   vertical-align: baseline;
-  height: 8.15pc;
+  height: 7.5em;
+  padding-right: .25em;
 }
 
 #titlebarName, #sidebarName {
   font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
-  margin: 0;
-  font-size: 11.6pc;
-  line-height: 8.5pc;
+  font-size: 10.5em;
+  line-height: .875em;
 }
 
 #titlebarName {
+  display: inline-block;
+  height: .715em;
 }
 
 #sidebar {
   position: absolute;
-  bottom: 19pc;
-  line-height: 8.5pc;
-  float: left;
-  width: 12pc;
-  margin-left: 4pc;
+  bottom: 16.5em;
+  line-height: 9em;
+  width: 12em;
+  margin-left: 1.5em;
 }
 
 #sidebarName {
@@ -124,8 +147,10 @@ html, body {
 #footer {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   padding: 1.5pc;
+  max-width: 81em;
+  width: 100%;
 }
 
 #footer p {
@@ -141,9 +166,12 @@ html, body {
  ***********************************/
 
 #nav {
-  font-size: 3pc;
+  margin-top: -.75em;
+}
+
+#nav li {
+  font-size: 3em;
   float: left;
-  margin: 0;
   list-style: none;
 }
 
@@ -153,10 +181,9 @@ html, body {
 
 #nav li a {
   display: block;
-  padding: 0 1pc;
+  padding: 0 .25em;
   text-decoration: none;
   color: #fff;
-  border-right: .25pc solid #fff;
 }
 
 #nav li a.last {
@@ -176,28 +203,48 @@ html, body {
  *        TEXT AND HEADINGS        *
  *                                 *
  ***********************************/
+* {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
 p {
-  line-height: 1.8em;
+  margin-top: .75em;
+  margin-bottom: .75em;
 }
 
 h1, h2, h3 {
   font-weight: normal;
-  line-height: .5em;
 }
 
 h1 {
   color: #FF6D00;
   font-size: 4em;
+  margin-top: .25em;
+  margin-bottom: .25em;
 }
 
 h2 {
   color: #2C93BA;
-  font-size: 2em;
+  font-size: 2.5em;
+  margin-top: .25em;
+  margin-bottom: .25em;
 }
 
 h3 {
   color: #3A9AC0;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  margin-top: .1em;
+  margin-bottom: .1em;
+}
+
+/***********************************
+ *                                 *
+ *              LISTS              *
+ *                                 *
+ ***********************************/
+li {
+  list-style: square;
 }
 
 /***********************************
