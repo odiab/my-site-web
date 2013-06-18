@@ -1,85 +1,24 @@
 <?php
 class Asset {
-
+  const LANG_EXT = '.php';
   //***********
   //* HELPERS *
   //***********
-
-  /**
-   * Removes trailing slashes and leading slashes for paths
-   */
-  private static function standardizeSlashes($path)
-  {
-    $len = strlen($path);
-    if ($len == 0) {
-      return $path;
-    }
-
-    if ($path[$len - 1] == '/') {
-      if ($len == 1) {
-        return '';
-      }
-      $path = substr($path, 0, $len - 1);
-    }
-
-    $len = strlen($path);
-    if ($path[0] == '/') {
-      $path = substr($path, 1, $len - 1);
-    }
-
-    return $path;
-  }
-
-  private static function removePHPExtension($path)
-  {
-    $len = strlen($path);
-    if ($len < 4) {
-      return $path;
-    }
-
-    if (substr($path, -4) == '.php') {
-      $path = substr($path, 0, $len - 4);
-    }
-    return $path;
-  }
-  private static function addPHPExtension($path)
-  {
-    $len = strlen($path);
-    if ($len == 0) {
-      return $path;
-    }
-
-    if ($len < 4 || substr($path, -4) != '.php') {
-      $path .= '.php';
-    }
-    return $path;
-  }
-
-  private static function removeQueryString($path)
-  {
-    $parts = explode('?', $path, 2);
-    if ($parts != FALSE && count($parts) > 0) {
-      $path = $parts[0];
-      return $path;
-    } else {
-      return '';
-    }
-  }
 
   /**
    * Formats paths to cooperate with the loader
    */
   public static function formatPath($path, $options=array())
   {
-    $path = self::removeQueryString($path);
-    $path = self::standardizeSlashes($path);
+    $path = StringTools::removeQueryString($path);
+    $path = StringTools::standardizeSlashes($path);
 
     if ($path == '') return $path; // treat empty path separately
 
-    if (isset($options['.php']) && !$options['.php']) {
-      $path = self::removePHPExtension($path);
+    if (isset($options[self::LANG_EXT]) && !$options[self::LANG_EXT]) {
+      $path = StringTools::removeExtension($path, self::LANG_EXT);
     } else {
-      $path = self::addPHPExtension($path);
+      $path = StringTools::addExtension($path, self::LANG_EXT);
     }
     return $path;
   }
@@ -87,29 +26,49 @@ class Asset {
   //***********
   //* METHODS *
   //***********
+  /**
+   * Includes specified asset of type specified by the class.
+   * @param $path string Path to include
+   * @param $args array Arguments for the script at the path
+   */
   public static function load($path, $args=array())
   {
+    // validate
     $class = get_called_class();
     if ($class == 'Asset') {
-      trigger_error("Cannot call load on raw Asset class", E_USER_ERROR);
-      return -1;
+      trigger_error(
+        "Asset::load(): Can only call load on subclasses of Asset",
+          E_USER_ERROR
+      );
+      return false;
     }
 
     if (!is_string($path)) {
-      trigger_error("Invalid path, must be a string", E_USER_WARNING);
-      return -1;
+      $className = get_called_class();
+      trigger_error(
+        "$classname::load(): Invalid path '$path', must be a string",
+          E_USER_WARNING
+      );
+      return false;
     }
 
-    $path = self::formatPath ($path);
-
+    // build full path
     $dir = $_SERVER['DOCUMENT_ROOT'] . '/' . strToLower($class);
-    if (!file_exists ("$dir/$path")) {
-      trigger_error("Asset at name of '$dir/$path' does not exist", E_USER_WARNING);
-      return -1;
+    $path = self::formatPath($path);
+    $completePath = "$dir/$path";
+
+    if (!file_exists($completePath)) {
+      $classname = get_called_class();
+      trigger_error(
+        "$classname::load(): $classname at name of '$completePath'
+          does not exist", E_USER_WARNING
+      );
+      return false;
     } else {
-      include ("$dir/$path");
+      // act
+      include ($completePath);
     }
 
-    return 0;
+    return true;
   }
 }
