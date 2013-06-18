@@ -6,7 +6,7 @@
 
     <div id="content">
       <?php
-      if (Page::load($args['path']) != 0) {
+      if (!Page::load($args['path'])) {
         Page::load('404');
       }
       ?>
