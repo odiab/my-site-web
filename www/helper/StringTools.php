@@ -30,9 +30,7 @@ class StringTools {
     // validate
     $ext = self::standardizeExtension($ext);
     if ($ext === NULL) {
-      trigger_error(
-        'StringTools::removeExtension(): empty extension', E_USER_WARNING
-      );
+      throw new InvalidArgumentException('Extension to remove was empty.');
       return NULL;
     }
 
@@ -60,9 +58,7 @@ class StringTools {
     // validation
     $ext = self::standardizeExtension($ext);
     if ($ext === NULL) {
-      trigger_error(
-        'StringTools::addExtension(): empty extension', E_USER_WARNING
-      );
+      throw new InvalidArgumentException('Extension to remove was empty.');
       return NULL;
     }
 

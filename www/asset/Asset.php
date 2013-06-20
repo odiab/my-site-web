@@ -36,20 +36,14 @@ class Asset {
     // validate
     $class = get_called_class();
     if ($class == 'Asset') {
-      trigger_error(
-        "Asset::load(): Can only call load on subclasses of Asset",
-          E_USER_ERROR
+      throw new InvalidCalledClassException(
+        'Can only call load on subclasses of Asset, not Asset itself'
       );
-      return false;
     }
 
     if (!is_string($path)) {
-      $className = get_called_class();
-      trigger_error(
-        "$classname::load(): Invalid path '$path', must be a string",
-          E_USER_WARNING
-      );
-      return false;
+      $type = gettype($path);
+      throw new InvalidArgumentTypeException('$path', 'string', $type);
     }
 
     // build full path
@@ -59,11 +53,7 @@ class Asset {
 
     if (!file_exists($completePath)) {
       $classname = get_called_class();
-      trigger_error(
-        "$classname::load(): $classname at name of '$completePath'
-          does not exist", E_USER_WARNING
-      );
-      return false;
+      throw new ClassFileNotFoundException($classname, $completePath);
     } else {
       // act
       include ($completePath);
