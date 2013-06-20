@@ -10,7 +10,6 @@
         Page::load('404');
       }
       ?>
-      <div id="bottomPush"></div>
     </div>
   </div>
 

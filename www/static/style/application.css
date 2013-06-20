@@ -1,8 +1,6 @@
-/***********************************
- *                                 *
- *             WEBFONTS            *
- *                                 *
- ***********************************/
+/************
+ * Webfonts *
+ ************/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 @font-face {
@@ -24,14 +22,12 @@
     url('/static/webfonts/Code-Pro/25CFB7_9_0.ttf') format('truetype');
 }
 
-/***********************************
- *                                 *
- *            CONTAINERS           *
- *                                 *
- ***********************************/
+/**************
+ * Containers *
+ **************/
 body {
   font-family: 'Open Sans', 'Trebuchet MS', 'Verdana', 'Helvetica', 'Arial',
-    sans-serif;
+  sans-serif;
   color: #000;
   background-color: #EDEDED;
   min-width: 69em;
@@ -47,52 +43,74 @@ html, body {
   height: 100%;
 }
 
+/*******************
+ ** TOP CONTAINER **
+ *******************/
 #topContainer {
   position: absolute;
+  width: 100%;
   left: 0;
   bottom: 15em;
-  min-height: 100%;
-  height: auto !important; /* Makes bottom stick in IE 6*/
-  height: 100%;
-  width: 100%;
-  max-width: 81em;
-  margin: 0 auto -15em;
-  vertical-align: bottom;
-  z-index: 0;
+  padding-bottom: 1.5em;
 }
 
+/***********
+ * Sidebar *
+ ***********/
+#sidebar {
+  position: relative;
+  float: left;
+  bottom: 0em;
+  line-height: 9em;
+  width: 12em;
+  padding-left: 3.65em;
+}
+
+#sidebarName {
+  display: block;
+  color: #FF6D00;
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+
+/****************
+ * Main Content *
+ ****************/
+#content {
+  position: absolute;
+  bottom: 0;
+  padding: 3em;
+  padding-left: 17em;
+  margin-right: 15em;
+}
+
+
+/**********************
+ ** BOTTOM CONTAINER **
+ **********************/
 #bottomContainer {
   position: absolute;
   width: 100%;
-  min-width: 69em;
   left: 0;
   bottom: 0;
   z-index: 1;
 }
 
-#content {
-  position: absolute;
-  bottom: 0;
-  padding: 3em;
-  margin-left: 12em;
-}
-
-#bottomContainer, #bottomPush {
-  height: 15em;
-}
-
-#bottomPush {
-  position: relative;
-  clear: both;
-}
-
+/************
+ * Titlebar *
+ ************/
 #titlebar {
   font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
   color: #fff;
-  background: #FF6D00;
   width: 100%;
-  padding: 1.5em 0 1.5em 3em;
+  background: #FF6D00;
+  padding: 1.25em 0 1.25em 0em;
   height: 7.5em;
+  clear: none;
+  min-width: 69em;
 }
 
 #titlebarHeader {
@@ -102,11 +120,7 @@ html, body {
   cursor: pointer;
   float: left;
   margin-right: 3em;
-}
-
-#navigation {
-  position: relative;
-  float: left;
+  margin-left: 5em;
 }
 
 #titlebarLogo {
@@ -121,52 +135,80 @@ html, body {
   line-height: .875em;
 }
 
+
 #titlebarName {
   display: inline-block;
   height: .715em;
 }
 
-#sidebar {
-  position: absolute;
-  bottom: 16.5em;
-  line-height: 9em;
-  width: 12em;
-  margin-left: 1.5em;
-}
-
-#sidebarName {
-  display: block;
-  color: #FF6D00;
-  transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-}
-
+/**********
+ * Footer *
+ **********/
 #footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 1.5pc;
-  max-width: 81em;
+  padding: 1.5em 0em;;
   width: 100%;
 }
 
 #footer p {
   margin: 0;
+  margin-right: 3em;
   text-align: right;
   color: #777;
 }
 
-/***********************************
- *                                 *
- *          NAVIGATION             *
- *                                 *
- ***********************************/
+/**************
+ * Navigation *
+ **************/
+
+#navigation {
+  position: relative;
+  float: left;
+}
+
+#navLinks {
+  display: block;
+  height: 3em;
+  margin-top: -.75em;
+  clear: none;
+}
+
+#navlist {
+  display:block;
+}
+
+#navList li {
+  font-size: 3em;
+  float: left;
+  list-style: none;
+}
+
+#navList li {
+  float: left;
+  display: block;
+  padding-right: .5em;
+}
+
+#navList li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#navList li a.last {
+  border-right: 0;
+}
+
+#navList li a:hover {
+  color: #069;
+}
+
+#navList li a.current {
+  color: #000;
+}
 
 #navButtons {
+  display: block;
   text-align: center;
+  clear: none;
 }
 
 #navButtons img {
@@ -179,45 +221,9 @@ html, body {
   text-decoration: none;
 }
 
-
-#nav {
-  margin-top: -.75em;
-}
-
-#nav li {
-  font-size: 3em;
-  float: left;
-  list-style: none;
-}
-
-#nav li {
-  float: left;
-}
-
-#nav li a {
-  display: block;
-  padding-right: .5em;
-  text-decoration: none;
-  color: #fff;
-}
-
-#nav li a.last {
-  border-right: 0;
-}
-
-#nav li a:hover {
-  color: #069;
-}
-
-#nav li a.current {
-  color: #000;
-}
-
-/***********************************
- *                                 *
- *        TEXT AND HEADINGS        *
- *                                 *
- ***********************************/
+/*********************
+ * Text and Headings *
+ *********************/
 * {
   font-size: 1em;
   line-height: 1.5em;
@@ -253,20 +259,17 @@ h3 {
   margin-bottom: .1em;
 }
 
-/***********************************
- *                                 *
- *              LISTS              *
- *                                 *
- ***********************************/
+/*********
+ * Lists *
+ *********/
 li {
   list-style: square;
 }
 
-/***********************************
- *                                 *
- *              LINKS              *
- *                                 *
- ***********************************/
+
+/*********
+ * Links *
+ *********/
 a img {
   border: none;
 }
@@ -283,11 +286,9 @@ a:hover, a:active, a:focus {
   color: #C00;
 }
 
-/***********************************
- *                                 *
- *          PAGE ELEMENTS          *
- *                                 *
- ***********************************/
+/*****************
+ * Page Elements *
+ *****************/
 hr {
   height: 1px;
   border-top: 1px;
