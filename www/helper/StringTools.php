@@ -1,7 +1,7 @@
 <?php
 class StringTools {
   /**
-   * Standardizes form of extension to have a leading 0. Returns NULL on
+   * Standardizes form of extension to have a leading '.'. Returns NULL on
    * failure.
    * @param $ext string Extension to standardize
    * @return string|NULL Standardized extension, or NULL on failure.
