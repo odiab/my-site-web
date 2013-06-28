@@ -1,5 +1,4 @@
 <?php
-
 class SiteAutoloader {
   private static $TYPES = array(
     "asset", "model", "helper", "exception",
@@ -13,13 +12,7 @@ class SiteAutoloader {
    */
   private static function createPath($class, $dir)
   {
-
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    if ($path[strlen($path) - 1] != '/') {
-      $path .= '/';
-    }
-
-    return "$path$dir/$class.php";
+    return SITE_ROOT . "/$dir/$class.php";
   }
 
   /**

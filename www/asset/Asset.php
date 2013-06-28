@@ -47,7 +47,7 @@ class Asset {
     }
 
     // build full path
-    $dir = $_SERVER['DOCUMENT_ROOT'] . '/' . strToLower($class);
+    $dir = SITE_ROOT . '/' . strToLower($class);
     $path = self::formatPath($path);
     $completePath = "$dir/$path";
 
