@@ -7,6 +7,10 @@ class StringTools {
    * @return string|NULL Standardized extension, or NULL on failure.
    */
   public function standardizeExtension($ext) {
+    if (!is_string($ext)) {
+      throw new InvalidArgumentException('Extension must be a string');
+    }
+
     $extLen = strlen($ext);
     if ($extLen == 0 || ($extLen == 1 && $ext[0] == '.')) {
       return NULL;
@@ -23,15 +27,22 @@ class StringTools {
    * Removes specified extension from file if one exists.
    * @param $path string Path to manipulate
    * @param $ext string Extension to remove
-   * @return string|NULL Modified path, or NULL on failure
+   * @return string Modified path
    */
   public static function removeExtension($path, $ext)
   {
     // validate
+    if (!is_string($path)) {
+      throw new InvalidArgumentException('Path must be a string');
+    }
+
+    if (!is_string($ext)) {
+      throw new InvalidArgumentException('Extension must be a string');
+    }
+
     $ext = self::standardizeExtension($ext);
     if ($ext === NULL) {
       throw new InvalidArgumentException('Extension to remove was empty.');
-      return NULL;
     }
 
     $extLen = strlen($ext);
@@ -41,8 +52,8 @@ class StringTools {
     }
 
     // only remove if in string
-    if (substr($path, -4) == $ext) {
-      $path = substr($path, 0, $len - 4);
+    if (substr($path, -$extLen) == $ext) {
+      $path = substr($path, 0, $len - $extLen);
     }
     return $path;
   }
@@ -56,6 +67,14 @@ class StringTools {
   public static function addExtension($path, $ext)
   {
     // validation
+    if (!is_string($path)) {
+      throw new InvalidArgumentException('Path must be a string');
+    }
+
+    if (!is_string($ext)) {
+      throw new InvalidArgumentException('Extension must be a string');
+    }
+
     $ext = self::standardizeExtension($ext);
     if ($ext === NULL) {
       throw new InvalidArgumentException('Extension to remove was empty.');
@@ -83,6 +102,10 @@ class StringTools {
   public static function standardizeSlashes($path)
   {
     // if path is empty, already standardized
+    if (!is_string($path)) {
+      throw new InvalidArgumentException('Path must be a string');
+    }
+
     $len = strlen($path);
     if ($len == 0) {
       return $path;
@@ -109,6 +132,10 @@ class StringTools {
    */
   public static function removeQueryString($path)
   {
+    if (!is_string($path)) {
+      throw new InvalidArgumentException('Path must be a string');
+    }
+
     $parts = explode('?', $path, 2);
     if ($parts != FALSE && count($parts) > 0) {
       $path = $parts[0];
