@@ -27,6 +27,7 @@ class SiteAutoloader {
       if (file_exists($path)) {
         require_once($path);
         break;
+      } else {
       }
     }
   }

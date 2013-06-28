@@ -6,7 +6,10 @@
 
     <div id="content">
       <?php
-      if (!Page::load($args['path'])) {
+      try {
+        Page::load($args['path']);
+      } catch (ClassFileNotFoundException $e) {
+        HTTPTools::setResponseCode(404);
         Page::load('404');
       }
       ?>
