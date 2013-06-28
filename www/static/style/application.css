@@ -30,7 +30,7 @@ body {
   sans-serif;
   color: #000;
   background-color: #EDEDED;
-  min-width: 69em;
+  min-width: 75em;
 }
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,
@@ -110,7 +110,7 @@ html, body {
   padding: 1.25em 0 1.25em 0em;
   height: 7.5em;
   clear: none;
-  min-width: 69em;
+  min-width: 75em;
 }
 
 #titlebarHeader {
@@ -177,7 +177,7 @@ html, body {
 }
 
 #navList li {
-  font-size: 2.75em;
+  font-size: 2.5em;
   float: left;
   list-style: none;
 }
