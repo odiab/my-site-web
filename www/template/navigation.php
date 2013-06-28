@@ -1,8 +1,8 @@
 <?php
   $links = array(
     'thoughts' => 'thoughts',
-    'cv' => 'cv',
-    'projects' => 'work',
+    'projects' => 'projects',
+    'resume' => 'resume',
   );
 
   $highlight = true;
