@@ -7,7 +7,7 @@
     <div id="content">
       <?php
       try {
-        View::load($args['path']);
+        View::load($_SERVER['REQUEST_URI']);
       } catch (ClassFileNotFoundException $e) {
         HTTPTools::setResponseCode(404);
         View::load('404');
@@ -17,7 +17,7 @@
   </div>
 
   <div id="bottomContainer">
-    <?php Template::load('titlebar', array('path' => $args['path'])); ?>
+    <?php Template::load('titlebar'); ?>
     <?php Template::load('footer'); ?>
   </div>
 </body>

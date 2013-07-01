@@ -5,6 +5,6 @@
   </div>
 
   <div id='navigation'>
-    <?php Template::load('navigation', array('path' => $args['path'])); ?>
+    <?php Template::load('navigation'); ?>
   </div>
 </div>

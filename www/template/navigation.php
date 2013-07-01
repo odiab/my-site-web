@@ -5,23 +5,19 @@
     'resume' => 'resume',
   );
 
-  $highlight = true;
+  $path = $_SERVER['REQUEST_URI'];
 
   // get current page, root dir
-  if (!isset($args['path'])) {
-    $args['path'] = '';
+  if ($path == '/' || $path == 'home') {
     $highlight = false;
-  }
+  } else {
+    $highlight = true;
 
-  $current = $args['path'];
-  $current = Asset::formatPath($current, array('.php' => FALSE));
-  $first = strpos($current, '/');
-  if ($first !== FALSE) {
-    $current = substr($current, 0, $first);
-  }
-
-  if ($current == '') {
-    $current = 'home';
+    $current = Asset::formatPath($path, array('.php' => FALSE));
+    $first = strpos($current, '/');
+    if ($first !== FALSE) {
+      $current = substr($current, 0, $first);
+    }
   }
 ?>
 
