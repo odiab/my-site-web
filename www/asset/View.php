@@ -1,5 +1,5 @@
 <?php
-class Page extends Asset
+class View extends Asset
 {
   public static function load($path, $args=array())
   {
