@@ -1,27 +1,18 @@
 <?php
-  $links = array(
-    'thoughts' => 'thoughts',
-    'projects' => 'projects',
-    'resume' => 'resume',
+  $sections = array(
+    'thoughts',
+    'projects',
+    'resume',
   );
-
-  $highlight = true;
 
   // get current page, root dir
   if (!isset($args['path'])) {
-    $args['path'] = '';
-    $highlight = false;
+    $args['path'] = 'home';
   }
 
-  $current = $args['path'];
-  $current = Asset::formatPath($current, array('.php' => FALSE));
-  $first = strpos($current, '/');
-  if ($first !== FALSE) {
-    $current = substr($current, 0, $first);
-  }
-
-  if ($current == '') {
-    $current = 'home';
+  $section = Page::extractSectionFromPath($args['path']);
+  if ($section == '') {
+    $section = 'home';
   }
 ?>
 
@@ -29,21 +20,19 @@
   <ul id="navList">
     <?php
     $i = 0;
-    $num = count($links);
+    $numSections = count($sections);
     // generate links to pages
-    foreach ($links as $key => $value) {
+    for ($i = 0; $i < $numSections; ++$i) {
+      $cur = $sections[$i];
       $class = '';
-      if ($highlight) {
-        if ($current == $key) {
-          $class .= 'current';
-        }
+      if ($section == $cur) {
+        $class .= 'current';
       }
-      if ($i == $num - 1) {
+      if ($i == $numSections - 1) {
         $class .= ' last';
       }
 
-      echo "<li><a class='$class' href='/$key'>$value</a></li>";
-      ++$i;
+      echo "<li><a class='$class' href='/$cur'>$cur</a></li>";
     }
     ?>
   </ul>
@@ -55,7 +44,7 @@
     'fb' => 'https://www.facebook.com/omar.s.diab',
     'linkedin' => 'https://www.linkedin.com/in/osdiab',
     'github' => 'https://github.com/odiab',
-    'email' => 'mailto:o.s.diab@gmail.com',
+    //'email' => 'mailto:o.s.diab@gmail.com',
   );
 
   foreach ($buttons as $name => $link)

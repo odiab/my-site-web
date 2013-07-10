@@ -10,19 +10,18 @@ class Asset {
    * Removes leading and trailing slashes, and optionally adds or removes
    * the extension.
    */
-  public static function formatPath($path, $options=array())
+  public static function generateAssetPath($path)
   {
     $path = StringTools::removeQueryString($path);
     $path = StringTools::standardizeSlashes($path);
 
-    if ($path == '') return $path; // treat empty path separately
-
-    if (isset($options[self::LANG_EXT]) && !$options[self::LANG_EXT]) {
-      $path = StringTools::removeExtension($path, self::LANG_EXT);
-    } else {
+    // treat empty path separately
+    if ($path != '') {
       $path = StringTools::addExtension($path, self::LANG_EXT);
     }
-    return $path;
+
+    $dir = SITE_ROOT . '/' . strToLower(get_called_class());
+    return "$dir/$path";
   }
 
   //***********
@@ -49,16 +48,13 @@ class Asset {
     }
 
     // build full path
-    $dir = SITE_ROOT . '/' . strToLower($class);
-    $path = self::formatPath($path);
-    $completePath = "$dir/$path";
+    $assetPath = self::generateAssetPath($path);
 
-    if (!file_exists($completePath)) {
-      $classname = get_called_class();
-      throw new ClassFileNotFoundException($classname, $completePath);
+    if (!file_exists($assetPath)) {
+      throw new ClassFileNotFoundException($class, $assetPath);
     } else {
       // act
-      include ($completePath);
+      include ($assetPath);
     }
 
     return true;
