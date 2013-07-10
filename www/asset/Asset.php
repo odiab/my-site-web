@@ -6,7 +6,9 @@ class Asset {
   //***********
 
   /**
-   * Formats paths to cooperate with the loader
+   * Formats paths to cooperate with the loader. Removes query string,
+   * Removes leading and trailing slashes, and optionally adds or removes
+   * the extension.
    */
   public static function formatPath($path, $options=array())
   {
