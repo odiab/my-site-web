@@ -44,7 +44,7 @@
     'fb' => 'https://www.facebook.com/omar.s.diab',
     'linkedin' => 'https://www.linkedin.com/in/osdiab',
     'github' => 'https://github.com/odiab',
-    //'email' => 'mailto:o.s.diab@gmail.com',
+    'email' => 'mailto:o.s.diab@gmail.com',
   );
 
   foreach ($buttons as $name => $link)
