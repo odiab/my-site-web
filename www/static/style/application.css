@@ -187,20 +187,27 @@ html, body {
   padding-right: .5em;
 }
 
-#navList li a {
+.navLink {
   text-decoration: none;
   color: #fff;
+  transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;
 }
 
-#navList li a.last {
+.navLink:visited, .navLink:active, .navLink:link {
+  color: inherit;
+}
+
+.navLink.last {
   border-right: 0;
 }
 
-#navList li a:hover {
-  color: #069;
+.navLink:hover {
+  color: #A6DAFF;
 }
 
-#navList li a.current {
+.navLink.current {
   color: #000;
 }
 

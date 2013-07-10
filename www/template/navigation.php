@@ -24,9 +24,9 @@
     // generate links to pages
     for ($i = 0; $i < $numSections; ++$i) {
       $cur = $sections[$i];
-      $class = '';
+      $class = 'navLink';
       if ($section == $cur) {
-        $class .= 'current';
+        $class .= ' current';
       }
       if ($i == $numSections - 1) {
         $class .= ' last';
