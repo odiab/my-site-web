@@ -10,12 +10,6 @@ class Page extends Asset
       return false;
     }
 
-    $path = self::formatPath($path);
-
-    if ($path == '') {
-      $path = 'home';
-    }
-
-    return parent::load($path, $args);
+    return Template::load('page', array('path' => $path));
   }
 }
