@@ -7,10 +7,10 @@
     <div id="content">
       <?php
       try {
-        Page::load($args['path']);
+        View::load($args['path']);
       } catch (ClassFileNotFoundException $e) {
         HTTPTools::setResponseCode(404);
-        Page::load('404');
+        View::load('404');
       }
       ?>
     </div>
