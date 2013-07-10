@@ -6,7 +6,7 @@ class StringTools {
    * @param $ext string Extension to standardize
    * @return string|NULL Standardized extension, or NULL on failure.
    */
-  public function standardizeExtension($ext) {
+  public static function standardizeExtension($ext) {
     if (!is_string($ext)) {
       throw new InvalidArgumentException('Extension must be a string');
     }
