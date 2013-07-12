@@ -1,6 +1,5 @@
 <?php
-class Asset {
-  const LANG_EXT = '.php';
+abstract class Asset {
   //***********
   //* HELPERS *
   //***********
@@ -17,7 +16,7 @@ class Asset {
 
     // treat empty path separately
     if ($path != '') {
-      $path = StringTools::addExtension($path, self::LANG_EXT);
+      $path = StringTools::addExtension($path, '.php');
     }
 
     $dir = SITE_ROOT . '/' . strToLower(get_called_class());
