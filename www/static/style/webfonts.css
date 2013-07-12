@@ -1,0 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+@font-face {
+  font-family: 'Code-Pro-LC';
+  src: url('/static/webfonts/Code-Pro/25CFB7_6_0.eot');
+  src: url('/static/webfonts/Code-Pro/25CFB7_6_0.eot?#iefix')
+    format('embedded-opentype'),
+    url('/static/webfonts/Code-Pro/25CFB7_6_0.woff') format('woff'),
+    url('/static/webfonts/Code-Pro/25CFB7_6_0.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Code-Pro';
+  src: url('/static/webfonts/Code-Pro/25CFB7_9_0.eot');
+  src: url('/static/webfonts/Code-Pro/25CFB7_9_0.eot?#iefix')
+    format('embedded-opentype'),
+    url('/static/webfonts/Code-Pro/25CFB7_9_0.woff') format('woff'),
+    url('/static/webfonts/Code-Pro/25CFB7_9_0.ttf') format('truetype');
+}
