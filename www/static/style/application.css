@@ -175,14 +175,10 @@ html, body {
   display:block;
 }
 
-#navList li {
+.navli {
   font-size: 2.5em;
   float: left;
   list-style: none;
-}
-
-#navList li {
-  float: left;
   display: block;
   padding-right: .5em;
 }
@@ -217,14 +213,15 @@ html, body {
   clear: none;
 }
 
-#navButtons img {
-  padding-right: 2em;
-  margin-top: .75em;
-  height: 3.5em;
+.navButton {
+  text-decoration: none;
 }
 
-#navButtons a {
-  text-decoration: none;
+.navButtonImg {
+  height: 3em;
+  width: 3em;
+  padding-right: 2em;
+  margin-top: .75em;
 }
 
 /*********************

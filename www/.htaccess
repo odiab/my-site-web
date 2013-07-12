@@ -20,3 +20,6 @@ allow from all
 order deny,allow
 deny from all
 </Limit>
+
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
