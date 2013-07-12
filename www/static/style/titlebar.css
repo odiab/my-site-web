@@ -1,0 +1,37 @@
+#titlebar {
+  color: #fff;
+  width: 100%;
+  background: #FF6D00;
+  padding: 1.25em 0 1.25em 0em;
+  height: 7.5em;
+  clear: none;
+  min-width: 75em;
+}
+
+#titlebarHeader {
+  position: relative;
+  font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
+  cursor: hand;
+  cursor: pointer;
+  float: left;
+  margin-right: 3em;
+  margin-left: 5em;
+}
+
+#titlebarLogo {
+  vertical-align: baseline;
+  height: 7.5em;
+  padding-right: .25em;
+}
+
+#titlebarName, #sidebarName {
+  font-family: 'Code-Pro-LC', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
+  font-size: 10.5em;
+  line-height: .875em;
+}
+
+
+#titlebarName {
+  display: inline-block;
+  height: .715em;
+}
