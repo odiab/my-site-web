@@ -32,7 +32,7 @@
         $class .= ' last';
       }
 
-      echo "<li><a class='$class' href='/$cur'>$cur</a></li>";
+      echo "<li class='navli'><a class='$class' href='/$cur'>$cur</a></li>";
     }
     ?>
   </ul>
@@ -49,8 +49,17 @@
 
   foreach ($buttons as $name => $link)
   {
-    echo "<a id='$name-link' href='$link'><img id='$name-img'
-      src='/static/images/buttons/$name-button.png' /></a>";
+?>
+    <a id=<?php echo "'$name-link'" ?> class='navButton'
+       href=<?php echo "'$link'" ?> >
+      <!--[if lte IE 8]>
+        <img id=<?php echo "'$name-img'" ?> class='navButtonImg'
+        src='/static/images/buttons/<?php echo "$name-button" ?>.png' />
+      <![endif]-->
+      <img id=<?php echo "'$name-img'"?> class='navButtonImg'
+      src='/static/images/buttons/<?php echo "$name-button" ?>.svgz' />
+    </a>
+<?php
   }
   ?>
 </div>
