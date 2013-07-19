@@ -10,7 +10,7 @@ class StringTools {
    */
   public static function standardizeExtension($ext) {
     if (!is_string($ext)) {
-      throw new InvalidArgumentException('Extension must be a string');
+      throw new \InvalidArgumentException('Extension must be a string');
     }
 
     $extLen = strlen($ext);
@@ -35,16 +35,16 @@ class StringTools {
   {
     // validate
     if (!is_string($path)) {
-      throw new InvalidArgumentException('Path must be a string');
+      throw new \InvalidArgumentException('Path must be a string');
     }
 
     if (!is_string($ext)) {
-      throw new InvalidArgumentException('Extension must be a string');
+      throw new \InvalidArgumentException('Extension must be a string');
     }
 
     $ext = self::standardizeExtension($ext);
     if ($ext === NULL) {
-      throw new InvalidArgumentException('Extension to remove was empty.');
+      throw new \InvalidArgumentException('Extension to remove was empty.');
     }
 
     $extLen = strlen($ext);
@@ -70,16 +70,16 @@ class StringTools {
   {
     // validation
     if (!is_string($path)) {
-      throw new InvalidArgumentException('Path must be a string');
+      throw new \InvalidArgumentException('Path must be a string');
     }
 
     if (!is_string($ext)) {
-      throw new InvalidArgumentException('Extension must be a string');
+      throw new \InvalidArgumentException('Extension must be a string');
     }
 
     $ext = self::standardizeExtension($ext);
     if ($ext === NULL) {
-      throw new InvalidArgumentException('Extension to remove was empty.');
+      throw new \InvalidArgumentException('Extension to remove was empty.');
       return NULL;
     }
 
@@ -105,7 +105,7 @@ class StringTools {
   {
     // if path is empty, already standardized
     if (!is_string($path)) {
-      throw new InvalidArgumentException('Path must be a string');
+      throw new \InvalidArgumentException('Path must be a string');
     }
 
     $len = strlen($path);
@@ -135,7 +135,7 @@ class StringTools {
   public static function removeQueryString($path)
   {
     if (!is_string($path)) {
-      throw new InvalidArgumentException('Path must be a string');
+      throw new \InvalidArgumentException('Path must be a string');
     }
 
     $parts = explode('?', $path, 2);
