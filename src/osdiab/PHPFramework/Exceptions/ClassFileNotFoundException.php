@@ -1,5 +1,5 @@
 <?php
-namespace OmarDiab\PHPFramework\Exceptions;
+namespace osdiab\PHPFramework\Exceptions;
 
 class ClassFileNotFoundException extends RuntimeException
 {
