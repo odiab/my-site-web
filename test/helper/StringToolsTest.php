@@ -1,4 +1,6 @@
 <?php
+use osdiab\PHPFramework\Helpers\StringTools;
+
 class StringToolsTest extends PHPUnit_Framework_TestCase
 {
   public function testStandardizeExtension() {
