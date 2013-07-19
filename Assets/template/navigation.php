@@ -47,7 +47,7 @@ use osdiab\PHPFramework\Assets;
   $buttons = array(
     'fb' => 'https://www.facebook.com/omar.s.diab',
     'linkedin' => 'https://www.linkedin.com/in/osdiab',
-    'github' => 'https://github.com/odiab',
+    'github' => 'https://github.com/osdiab',
     'email' => 'mailto:o.s.diab@gmail.com',
   );
 
