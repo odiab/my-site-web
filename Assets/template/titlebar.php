@@ -1,5 +1,5 @@
 <?php
-use osdiab\PHPFramework as FW;
+use osdiab\PHPFramework\Assets;
 ?>
 <div id="titlebar">
   <div id="titlebarHeader" onclick="window.location = '/'">
@@ -8,6 +8,6 @@ use osdiab\PHPFramework as FW;
   </div>
 
   <div id='navigation'>
-    <?php FW\Assets\Template::load('navigation', array('path' => $args['path'])); ?>
+    <?php Assets\Template::load('navigation', array('path' => $args['path'])); ?>
   </div>
 </div>
