@@ -3,6 +3,16 @@ namespace osdiab\PHPFramework\Helpers;
 
 class StringTools {
   /**
+   * Removes namespace from a class's name.
+   * @param class string name of the class
+   * @return string Class with namespace stripped off
+   */
+  public static function removeNamespaceFromClass($class)
+  {
+    return end(explode('\\', $class));
+  }
+
+  /**
    * Standardizes form of extension to have a leading '.'. Returns NULL on
    * failure.
    * @param $ext string Extension to standardize

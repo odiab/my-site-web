@@ -26,7 +26,8 @@ abstract class Asset {
       $path = StringTools::addExtension($path, '.php');
     }
 
-    $dir = SITE_ROOT . '/' . strToLower(get_called_class());
+    $className = StringTools::removeNamespaceFromClass(get_called_class());
+    $dir = SITE_ROOT . '/Assets/' . strToLower($className);
     return "$dir/$path";
   }
 
@@ -41,7 +42,8 @@ abstract class Asset {
   public static function load($path, $args=array())
   {
     // validate
-    $class = get_called_class();
+    $class = StringTools::removeNamespaceFromClass(get_called_class());
+
     if ($class == 'Asset') {
       throw new InvalidCalledClassException(
         'Can only call load on subclasses of Asset, not Asset itself'
