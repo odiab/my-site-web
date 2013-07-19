@@ -1,5 +1,5 @@
 <?php
-namespace OmarDiab\PHPFramework\Helpers;
+namespace osdiab\PHPFramework\Helpers;
 
 class StringTools {
   /**

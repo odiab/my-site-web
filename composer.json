@@ -3,6 +3,6 @@
     "phpunit/phpunit": "3.7.*"
   },
   "autoload": {
-    "psr-0": {"OmarDiab\\PHPFramework": "src/"}
+    "psr-0": {"osdiab\\PHPFramework\\": "src/"}
   }
 }

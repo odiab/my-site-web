@@ -1,5 +1,5 @@
 <?php
-namespace OmarDiab\PHPFramework\Core;
+namespace osdiab\PHPFramework\Core;
 
 class Router {
   /**

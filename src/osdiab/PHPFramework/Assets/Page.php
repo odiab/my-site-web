@@ -1,5 +1,5 @@
 <?php
-namespace OmarDiab\PHPFramework\Assets;
+namespace osdiab\PHPFramework\Assets;
 
 class Page extends Asset
 {
