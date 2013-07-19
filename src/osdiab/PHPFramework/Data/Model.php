@@ -1,6 +1,8 @@
 <?php
 namespace osdiab\PHPFramework\Data\Model;
 
+use osdiab\PHPFramework\Helpers\StringTools;
+
 /**
  * Represents an object with a data binding.
  */
@@ -10,9 +12,6 @@ abstract class Model
   //* INSTANCE VARS *
   //*****************
 
-  /** @var Collection */
-  protected $collection;
-
   /** @var array */
   protected $data;
 
@@ -20,9 +19,19 @@ abstract class Model
   //* STATIC METHODS *
   //******************
 
+  protected static function getCollection()
+  {
+    $collectionName = StringTools::removeNamespaceFromClass(
+      get_called_class()
+    );
+    $database = Application::getDatabase();
+    return $database->getCollection($collectionName);
+  }
+
   public static function load(Query $q)
   {
-    $collection->query($q);
+    $data = getCollection()->query($q);
+
   }
 
   public static function loadId(Id $id)
