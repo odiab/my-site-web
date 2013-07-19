@@ -1,5 +1,5 @@
 <?php
-use osdiab\PHPFramework\Assets as Assets;
+use osdiab\PHPFramework\Assets;
 ?>
 
 <body>

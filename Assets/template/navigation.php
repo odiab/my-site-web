@@ -1,5 +1,5 @@
 <?php
-use osdiab\PHPFramework as FW;
+use osdiab\PHPFramework\Assets;
 ?>
 
 <?php
@@ -14,7 +14,7 @@ use osdiab\PHPFramework as FW;
     $args['path'] = 'home';
   }
 
-  $section = FW\Assets\Page::extractSectionFromPath($args['path']);
+  $section = Assets\Page::extractSectionFromPath($args['path']);
   if ($section == '') {
     $section = 'home';
   }
