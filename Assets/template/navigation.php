@@ -61,7 +61,7 @@ use osdiab\PHPFramework as FW;
         src='/static/images/buttons/<?php echo "$name-button" ?>.png' />
       <![endif]-->
       <img id=<?php echo "'$name-img'"?> class='navButtonImg'
-      src='/static/images/buttons/<?php echo "$name-button" ?>.svgz' />
+      src='/static/images/buttons/<?php echo "$name-button" ?>.svg' />
     </a>
 <?php
   }
