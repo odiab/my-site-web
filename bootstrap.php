@@ -1,2 +1,2 @@
 <?php
-define('SITE_ROOT', realpath(__DIR__ . '/..'));
+define('SITE_ROOT', __DIR__);

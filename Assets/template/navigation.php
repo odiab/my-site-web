@@ -1,4 +1,8 @@
 <?php
+use osdiab\PHPFramework as FW;
+?>
+
+<?php
   $sections = array(
     'thoughts',
     'projects',
@@ -10,7 +14,7 @@
     $args['path'] = 'home';
   }
 
-  $section = Page::extractSectionFromPath($args['path']);
+  $section = FW\Assets\Page::extractSectionFromPath($args['path']);
   if ($section == '') {
     $section = 'home';
   }

@@ -1,3 +1,7 @@
+<?php
+use osdiab\PHPFramework as FW;
+?>
+
 <body>
   <div id="topContainer">
     <div id="sidebar">
@@ -7,17 +11,17 @@
     <div id="content">
       <?php
       try {
-        View::load($args['path']);
+        FW\Assets\View::load($args['path']);
       } catch (ClassFileNotFoundException $e) {
-        HTTPTools::setResponseCode(404);
-        View::load('404');
+        FW\Helpers\HTTPTools::setResponseCode(404);
+        FW\Assets\View::load('404');
       }
       ?>
     </div>
   </div>
 
   <div id="bottomContainer">
-    <?php Template::load('titlebar', array('path' => $args['path'])); ?>
-    <?php Template::load('footer'); ?>
+    <?php FW\Assets\Template::load('titlebar', array('path' => $args['path'])); ?>
+    <?php FW\Assets\Template::load('footer'); ?>
   </div>
 </body>
