@@ -1,7 +1,7 @@
 <?php
 namespace osdiab\PHPFramework\Exceptions;
 
-class InvalidArgumentTypeException extends InvalidArgumentException
+class InvalidArgumentTypeException extends \InvalidArgumentException
 {
   public function __construct($varname, $intended, $actual)
   {

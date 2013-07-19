@@ -1,6 +1,8 @@
 <?php
 namespace osdiab\PHPFramework\Assets;
 
+use osdiab\PHPFramework\Exceptions\InvalidCalledClassException;
+
 class Page extends Asset
 {
   /**

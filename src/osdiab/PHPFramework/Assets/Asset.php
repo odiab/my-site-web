@@ -1,6 +1,11 @@
 <?php
 namespace osdiab\PHPFramework\Assets;
 
+use osdiab\PHPFramework\Exceptions\InvalidCalledClassException;
+use osdiab\PHPFramework\Exceptions\InvalidArgumentTypeException;
+use osdiab\PHPFramework\Exceptions\ClassFileNotFoundException;
+use osdiab\PHPFramework\Helpers\StringTools;
+
 abstract class Asset {
   //***********
   //* HELPERS *

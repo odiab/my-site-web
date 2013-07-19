@@ -1,6 +1,9 @@
 <?php
 namespace osdiab\PHPFramework\Core;
 
+use osdiab\PHPFramework\Helpers\StringTools;
+use osdiab\PHPFramework\Assets\Page;
+
 class Router {
   /**
    * Formats paths to cooperate with the router. Removes query string and
@@ -24,7 +27,7 @@ class Router {
   {
     $pattern = '/.*\/\/.*/'; // checks for two slashes in a row
     if (preg_match($pattern, $path)) {
-      throw new InvalidArgumentException(
+      throw new \InvalidArgumentException(
         'Page path cannot contain two or more slashes in a row.'
           . 'Received \'' . $path . '\''
       );
@@ -32,7 +35,7 @@ class Router {
 
     $pattern = '/[a-zA-Z0-9-_\/]*/';
     if (!preg_match($pattern, $path)) {
-      throw new InvalidArgumentException(
+      throw new \InvalidArgumentException(
         'Page path may only have -, _, and alphanumeric characters. '
           . 'Received \'' . $path . '\''
       );
