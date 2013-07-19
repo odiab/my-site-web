@@ -1,4 +1,6 @@
 <?php
+namespace OmarDiab\PHPFramework\Exceptions;
+
 class InvalidArgumentTypeException extends InvalidArgumentException
 {
   public function __construct($varname, $intended, $actual)

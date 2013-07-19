@@ -1,4 +1,6 @@
 <?php
+namespace OmarDiab\PHPFramework\Assets;
+
 class Page extends Asset
 {
   /**

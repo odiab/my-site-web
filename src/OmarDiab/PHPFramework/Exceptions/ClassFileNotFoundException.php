@@ -1,4 +1,6 @@
 <?php
+namespace OmarDiab\PHPFramework\Exceptions;
+
 class ClassFileNotFoundException extends RuntimeException
 {
   public function __construct($class, $path) {
