@@ -1,5 +1,5 @@
 <?php
-use osdiab\PHPFramework as FW;
+use osdiab\PHPFramework\Assets as Assets;
 ?>
 
 <body>
@@ -10,18 +10,13 @@ use osdiab\PHPFramework as FW;
 
     <div id="content">
       <?php
-      try {
-        FW\Assets\View::load($args['path']);
-      } catch (ClassFileNotFoundException $e) {
-        FW\Helpers\HTTPTools::setResponseCode(404);
-        FW\Assets\View::load('404');
-      }
+      Assets\View::load($args['path']);
       ?>
     </div>
   </div>
 
   <div id="bottomContainer">
-    <?php FW\Assets\Template::load('titlebar', array('path' => $args['path'])); ?>
-    <?php FW\Assets\Template::load('footer'); ?>
+    <?php Assets\Template::load('titlebar', array('path' => $args['path'])); ?>
+    <?php Assets\Template::load('footer'); ?>
   </div>
 </body>
