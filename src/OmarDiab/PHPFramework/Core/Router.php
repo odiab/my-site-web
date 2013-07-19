@@ -1,4 +1,6 @@
 <?php
+namespace OmarDiab\PHPFramework\Core;
+
 class Router {
   /**
    * Formats paths to cooperate with the router. Removes query string and

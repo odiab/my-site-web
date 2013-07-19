@@ -1,4 +1,6 @@
 <?php
+namespace OmarDiab\PHPFramework\Helpers;
+
 class StringTools {
   /**
    * Standardizes form of extension to have a leading '.'. Returns NULL on

@@ -1,4 +1,6 @@
 <?php
+namespace OmarDiab\PHPFramework\Helpers;
+
 class HTTPTools {
   protected static $messages = array(
     // Informational 1xx

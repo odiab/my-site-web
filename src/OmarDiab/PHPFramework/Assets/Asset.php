@@ -1,4 +1,6 @@
 <?php
+namespace OmarDiab\PHPFramework\Assets;
+
 abstract class Asset {
   //***********
   //* HELPERS *
